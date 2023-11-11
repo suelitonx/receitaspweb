@@ -1,25 +1,10 @@
-export default function Principal(){
+import MariaPrea from "./mariaprea";
 
+export default function Principal() {
   return (
-
-     <div>
-
-        <h1>Nova Página</h1>
-
-        <MariaPrea/>
-
-     </div>
-
+    <div>
+      <h1>Nova Página</h1>
+      <MariaPrea></MariaPrea>
+    </div>
   )
-
-}
-
-export function MariaPrea(){
-
-  return (
-
-     <h2>Morreu Maria Preá...</h2>
-
-  )
-
 }
