@@ -11,13 +11,18 @@ async function getData(pesquisa: string) {
  
   return res.json()
 }
- 
+
 export default async function Page() {
   const data = await getData("avengers")
 
   return (
     <div>
-      {data.Search.map( (m: { Title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; Year: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; }) => <div>{m.Title} --- {m.Year}</div>  )}
+      {data.Search.map((m: {
+        Title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined;
+        Year: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined;
+      }, index: number) => (
+        <div key={index}>{m.Title} --- {m.Year}</div>
+      ))}
     </div>
   )
 }
