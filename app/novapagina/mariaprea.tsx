@@ -1,5 +1,5 @@
-export default function MariaPrea() {
+export default function MariaPrea(message: string) {
     return (
-      <h2>Morreu Maria Preá...</h2>
+      <h2>{message}</h2>
     )
 }

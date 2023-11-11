@@ -4,7 +4,7 @@ export default function Principal() {
   return (
     <div>
       <h1>Nova Página</h1>
-      <MariaPrea></MariaPrea>
+      {MariaPrea("Eita mulesta")}
     </div>
   )
 }
