@@ -1,7 +1,7 @@
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from "react";
 
 async function getData(pesquisa: string) {
-  let linkPesquisa = "http://www.omdbapi.com/?apikey=cf01091f&s=" + pesquisa
+  let linkPesquisa = "http://www.omdbapi.com/?apikey=583e64c4&s=" + pesquisa
 
   const res = await fetch(linkPesquisa)
  

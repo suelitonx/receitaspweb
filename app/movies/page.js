@@ -3,7 +3,7 @@
 import useSWR from 'swr';
 import Link from 'next/link'; // Importe o componente Link do Next.js
 
-const API_URL = 'http://www.omdbapi.com/?apikey=cf01091f&s=bagdad';
+const API_URL = 'http://www.omdbapi.com/?apikey=583e64c4&s=bagdad';
 
 export default function Movies2() {
   const { data, error } = useSWR(API_URL, fetcher);

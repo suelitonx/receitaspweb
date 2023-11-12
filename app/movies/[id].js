@@ -3,7 +3,7 @@
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 
-const API_URL = 'http://www.omdbapi.com/?apikey=cf01091f';
+const API_URL = 'http://www.omdbapi.com/?apikey=583e64c4';
 
 export default function MovieDetail() {
   const router = useRouter();
