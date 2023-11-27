@@ -1,5 +1,7 @@
 'use client'
 
+import Table from 'react-bootstrap/Table';
+
 import useSWR from 'swr';
 import Link from 'next/link'; // Importe o componente Link do Next.js
 
@@ -18,16 +20,30 @@ export default function Movies2() {
 
   return (
     <div>
+  <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Ano</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+
+
+      
       {data.Search.map((m) => (
-        // Use o componente Link para criar um link para a página do filme
-        <Link key={m.imdbID} href={`/movies/${m.imdbID}`}>
+ 
+          <tr key={m.imdbID}>
+            <td><Link href={`/movies/${m.imdbID}`}>{m.Title}</Link></td>
+            <td>{m.Year}</td>
+          </tr>
           
-            
-            {m.Title} --- {m.Year}
-          
-            <br></br>
-        </Link>
       ))}
+
+    </tbody>
+    </Table>
+
     </div>
   );
 }

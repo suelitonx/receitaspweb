@@ -3,6 +3,9 @@
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 
+import Card from 'react-bootstrap/Card';
+import Spinner from 'react-bootstrap/Spinner';
+
 interface MovieDetail {
   Title: string;
   Year: string;
@@ -25,18 +28,28 @@ export default function MovieDetail( { params } : {
   }
 
   if (!data) {
-    return <div>Carregando...</div>;
+    return <div>
+
+
+<Spinner animation="border" variant="primary" />
+
+    </div>;
   }
 
   const { Title, Year, Poster, Plot } = data;
 
   return (
     <div>
-      <h1>{Title}</h1>
-      <p>{Year}</p>
-      <img src={Poster} alt={Title} />
-      <p>{Plot}</p>
+      <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={Poster} />
+      <Card.Body>
+        <Card.Title>{Title} ({Year})</Card.Title>
+        <Card.Text>{Plot}</Card.Text>
+      </Card.Body>
+    </Card>
     </div>
+
+    
   );
 }
 
