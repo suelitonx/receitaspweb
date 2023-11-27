@@ -1,23 +1,19 @@
-'use client'
-
 import Table from 'react-bootstrap/Table';
 
 import useSWR from 'swr';
 import Link from 'next/link'; // Importe o componente Link do Next.js
 
-const API_URL = 'http://www.omdbapi.com/?apikey=583e64c4&s=bagdad';
+const API_URL = 'http://www.omdbapi.com/?apikey=583e64c4&s=bagdad'
 
-export default function Movies2() {
-  const { data, error } = useSWR(API_URL, fetcher);
-
-  if (error) {
-    return <div>Falha na requisição: {error.message}</div>;
+export default async function Movies2() {
+  const res = await fetch(API_URL)
+ 
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
   }
-
-  if (!data) {
-    return <div>Carregando...</div>;
-  }
-
+ 
+  let data = await res.json()
+  
   return (
     <div>
   <Table striped bordered hover>
